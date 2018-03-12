@@ -3,11 +3,11 @@
 > A Vue.js project
 
 ## 技术栈
-------
+
 vue + vuex + vue-router + axios + webpack + ES6
 
 ## 项目运行
-------
+
 #### 源码地址： [https://github.com/nh0007/vue-douban.git](https://github.com/nh0007/vue-douban.git)
 
 #### 如何运行
@@ -97,4 +97,4 @@ npm run dev
 ![search](https://github.com/nh0007/vue-douban/raw/master/screenshot/search.png)
 
 ## 结语
-由于工作中使用的框架并不是vue,对vue的了解也并不深入，如果项目中有出现啥问题或者更加好的实现，欢迎issue。欢迎star哦。
+由于工作中使用的框架并不是vue,对vue的了解也并不深入，如果项目中有出现啥问题或者更加好的实现，欢迎issue。另外，欢迎star哦。
