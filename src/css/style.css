@@ -1,0 +1,90 @@
+html,body,ul,ol,h1,h2,h3,h4,p {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.left-content{
+  width: 675px;
+  float: left;
+  margin-bottom: 60px;
+  padding-right: 40px;
+}
+.content-header{
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  color: #333;
+}
+.content-header h2{
+  display: inline-block;
+}
+.aside-content{
+  width: 192px;
+  float: right;
+  margin-bottom: 60px;
+}
+.aside-item{
+  margin: 1.5px 0;
+  padding: 10px 0 10px 3px;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+  color: #37a;
+  cursor: pointer;
+}
+.common-link{
+  color: #37a;
+  cursor: pointer;
+}
+.common-link:hover{
+  color: white;
+  background: #37a;
+}
+.link-title{
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.link-title a{
+  color: #37a;
+}
+.link-title a:hover{
+  color: white;
+  background: #37a;
+}
+.move-to-right-enter-active,
+.move-to-left-enter-active{
+  transition: all .5s ease;
+  transform: translateX(0);
+}
+.move-to-right-leave-active{
+  transition: all .5s ease;
+  transform: translateX(-100%);
+}
+.move-to-left-leave-active{
+  transition: all .5s ease;
+  transform: translateX(100%);
+}
+.move-to-right-enter{
+  transform: translateX(100%);
+}
+.move-to-left-enter{
+  transform: translateX(-100%);
+}
+.move-to-right-leave,
+.move-to-left-leave{
+  transform: translateX(0);
+}
+.score-image{
+  display: inline-block;
+  width:55px;
+  height:11px;
+  margin:0 3px 0 0;
+  background: url("../assets/scoring.png");
+}
