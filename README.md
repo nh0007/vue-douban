@@ -6,6 +6,10 @@
 
 vue + vuex + vue-router + axios + webpack + ES6
 
+## 文章地址
+
+#### [基于vue搭建一个简易版豆瓣](https://juejin.im/post/5aa686f86fb9a028c42ddadb)
+
 ## 项目运行
 
 #### 源码地址： [https://github.com/nh0007/vue-douban.git](https://github.com/nh0007/vue-douban.git)
@@ -31,7 +35,7 @@ npm install
 npm run dev
 ```
 
- - 等待运行完毕后，在浏览器输入: http://localhost:8888;可看到项目效果。
+ - 等待运行完毕后，在浏览器输入命令行提示地址，可看到项目效果。
 
 ## 代码结构
 ```shell
