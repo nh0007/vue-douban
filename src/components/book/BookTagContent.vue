@@ -25,6 +25,7 @@
             <img :src="book.images.large"
                  :alt="book.title"
                  class="book-tag-content-image"
+                 referrerpolicy="no-referrer"
                  @mouseenter="showBookPrompt(book, index)"
                  @mouseleave="hideBookPrompt()">
           </a>

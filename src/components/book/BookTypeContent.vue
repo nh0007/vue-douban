@@ -20,7 +20,8 @@
         <a :href="book.alt" :title="book.title">
           <img :src="book.images.large"
                :alt="book.title"
-               class="book-image">
+               class="book-image"
+               referrerpolicy="no-referrer">
         </a>
         <div class="book-more-info">
           <h3 class="link-title">
