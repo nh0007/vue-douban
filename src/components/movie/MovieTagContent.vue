@@ -3,29 +3,39 @@
     <div class="content-header">
       <h2>{{currentMovieTag}}</h2>
 
-      <base-slide class="movie-tag-content-slide"
-                  :pageCount="pageCount"
-                  :current-page="currentPage"
-                  background-color="#6D98D2"
-                  @change-page="changePage"
-                  @change-direction="changeDirection"/>
+      <base-slide 
+        class="movie-tag-content-slide"
+        :pageCount="pageCount"
+        :current-page="currentPage"
+        background-color="#6D98D2"
+        @change-page="changePage"
+        @change-direction="changeDirection"
+      />
     </div>
 
     <transition-group tag="div" class="movie-content" :name="transitionName">
-      <ul v-for="(movies, index) in processedMovies"
-          :key="index"
-          class="movie-list"
-          v-show="index === currentPage">
-        <li v-for="movie in movies"
-            :key="movie.id">
+      <ul 
+        v-for="(movies, index) in processedMovies"
+        :key="index"
+        class="movie-list"
+        v-show="index === currentPage"
+      >
+        <li 
+          v-for="movie in movies"
+          :key="movie.id"
+        >
           <a :href="movie.alt">
-            <img :src="movie.images.large"
-                 :alt="movie.title"
-                 class="movie-image">
+            <img 
+              :src="movie.images.large"
+              :alt="movie.title"
+              class="movie-image"
+            />
           </a>
           <h3 class="link-title">
-            <a :href="movie.alt"
-               :title="movie.title">
+            <a 
+              :href="movie.alt"
+              :title="movie.title"
+            >
               {{movie.title}}
             </a>
           </h3>

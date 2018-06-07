@@ -2,11 +2,13 @@
   <aside class="aside-content">
     <h2 class="content-header">电影分类</h2>
     <ul>
-      <li v-for="(movieTag, index) in movieTags"
-          :key="index"
-          class="aside-item"
-          :class="{'active-movie-tag': movieTag === currentMovieTag}"
-          @click="changeMovieTag(movieTag)">
+      <li 
+        v-for="(movieTag, index) in movieTags"
+        :key="index"
+        class="aside-item"
+        :class="{'active-movie-tag': movieTag === currentMovieTag}"
+        @click="changeMovieTag(movieTag)"
+      >
         {{movieTag}}
       </li>
     </ul>

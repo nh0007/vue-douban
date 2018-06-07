@@ -1,9 +1,11 @@
 <template>
   <div class="left-content">
-    <city-activity-content-item v-for="(activityType, index) in activityTypes"
-                                :key="index"
-                                :activityType="activityType"
-                                :dayTypes="dayTypes"/>
+    <city-activity-content-item 
+      v-for="(activityType, index) in activityTypes"
+      :key="index"
+      :activityType="activityType"
+      :dayTypes="dayTypes"
+    />
   </div>
 </template>
 

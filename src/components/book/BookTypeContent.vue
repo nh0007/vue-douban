@@ -3,34 +3,41 @@
 
     <div class="content-header">
       <h2>最受关注图书榜</h2>
-      <a v-for="(bookType, index) in bookTypes"
-         :key="index"
-         href="javascript:void(0)"
-         class="book-type-link"
-         :class="{active: bookType === currentBookType, 'not-active': bookType !== currentBookType}"
-         @click="changeBookType(bookType)">
+      <a 
+        v-for="(bookType, index) in bookTypes"
+        :key="index"
+        href="javascript:void(0)"
+        class="book-type-link"
+        :class="{active: bookType === currentBookType, 'not-active': bookType !== currentBookType}"
+        @click="changeBookType(bookType)"
+      >
         {{bookType}}
       </a>
     </div>
 
     <ul class="book-list">
-      <li v-for="book in currentTypeBooks"
-          :key="book.id"
-          class="book-item">
+      <li 
+        v-for="book in currentTypeBooks"
+        :key="book.id"
+        class="book-item"
+      >
         <a :href="book.alt" :title="book.title">
-          <img :src="book.images.large"
-               :alt="book.title"
-               class="book-image"
-               referrerpolicy="no-referrer">
+          <img 
+            :src="book.images.large"
+            :alt="book.title"
+            class="book-image"
+            referrerpolicy="no-referrer"
+          />
         </a>
         <div class="book-more-info">
           <h3 class="link-title">
             <a :href="book.alt">{{book.title}}</a>
           </h3>
           <p>
-            <span class="score-image"
-                  :style="getStarStyle(book.rating.average)">
-            </span>
+            <span 
+              class="score-image"
+              :style="getStarStyle(book.rating.average)"
+            />
             <span class="average-score">{{book.rating.average}}</span>
           </p>
           <p>作者 : {{book.author.join()}}</p>

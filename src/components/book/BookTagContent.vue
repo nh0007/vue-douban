@@ -4,34 +4,45 @@
       <h2>{{currentBookTag}}</h2>
       <router-link to="book-tag-more-info" class="common-link">更多»</router-link>
 
-      <base-slide class="book-tag-content-slide"
-                  :pageCount="pageCount"
-                  :current-page="currentPage"
-                  background-color="#9b9a8e"
-                  @change-page="changePage"
-                  @change-direction="changeDirection"/>
+      <base-slide 
+        class="book-tag-content-slide"
+        :pageCount="pageCount"
+        :current-page="currentPage"
+        background-color="#9b9a8e"
+        @change-page="changePage"
+        @change-direction="changeDirection"
+      />
     </div>
 
     <transition-group tag="div" class="book-tag-content" :name="transitionName">
-      <ul v-for="(books, index) in processedBooks"
-          :key="index"
-          v-show="index === currentPage"
-          class="book-tag-content-list"
-          ref="bookList">
-        <li v-for="(book, index) in books"
-            :key="book.id">
-          <a :href="book.alt"
-             :title="book.title">
-            <img :src="book.images.large"
-                 :alt="book.title"
-                 class="book-tag-content-image"
-                 referrerpolicy="no-referrer"
-                 @mouseenter="showBookPrompt(book, index)"
-                 @mouseleave="hideBookPrompt()">
+      <ul 
+        v-for="(books, index) in processedBooks"
+        :key="index"
+        v-show="index === currentPage"
+        class="book-tag-content-list"
+        ref="bookList"
+      >
+        <li 
+          v-for="(book, index) in books"
+          :key="book.id"
+        >
+          <a 
+            :href="book.alt"
+            :title="book.title"
+          >
+            <img 
+              :src="book.images.large"
+              :alt="book.title"
+              class="book-tag-content-image"
+              referrerpolicy="no-referrer"
+              @mouseenter="showBookPrompt(book, index)"
+              @mouseleave="hideBookPrompt()"
+            />
           </a>
           <h3 class="link-title">
-            <a :href="book.alt"
-               :title="book.title">
+            <a 
+              :href="book.alt"
+              :title="book.title">
               {{book.title}}
             </a>
           </h3>
@@ -40,10 +51,12 @@
       </ul>
     </transition-group>
 
-    <div class="book-tag-content-prompt"
-         v-if="loadPrompt"
-         v-show="showPrompt"
-         :style="promptStyle">
+    <div 
+      class="book-tag-content-prompt"
+      v-if="loadPrompt"
+      v-show="showPrompt"
+      :style="promptStyle"
+    >
       <span class="outside-triangle"></span>
       <span class="inside-triangle"></span>
       <h3 class="prompt-title">{{currentBookPrompt.title}}</h3>

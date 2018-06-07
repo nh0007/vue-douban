@@ -2,11 +2,13 @@
   <aside class="aside-content">
     <h2 class="content-header">城市列表</h2>
     <ul>
-      <li v-for="(city, index) in cities"
-          :key="index"
-          class="aside-item"
-          :class="{active: city === currentCity}"
-          @click="changeCurrentCity(city)">
+      <li 
+        v-for="(city, index) in cities"
+        :key="index"
+        class="aside-item"
+        :class="{active: city === currentCity}"
+        @click="changeCurrentCity(city)"
+      >
         {{city.name}}
       </li>
     </ul>

@@ -3,21 +3,25 @@
     <h2 class="content-header">标签列表</h2>
 
     <ul class="book-tag-list">
-      <li v-for="(bookTag, index) in bookTags"
-          :key="index"
-          class="book-tag-item"
-          :class="{'book-active-tag-item': bookTag === currentBookTags}"
-          @click="changeCurrentBookTags(bookTag)">
+      <li 
+        v-for="(bookTag, index) in bookTags"
+        :key="index"
+        class="book-tag-item"
+        :class="{'book-active-tag-item': bookTag === currentBookTags}"
+        @click="changeCurrentBookTags(bookTag)"
+      >
         {{bookTag.tagName}}
       </li>
     </ul>
 
     <ul>
-      <li v-for="(subTag, index) in currentBookTags.subTags"
-          :key="index"
-          class="aside-item"
-          :class="{'book-active-subtag-item': subTag === currentBookTag}"
-          @click="changeCurrentBookTag(subTag)">
+      <li 
+        v-for="(subTag, index) in currentBookTags.subTags"
+        :key="index"
+        class="aside-item"
+        :class="{'book-active-subtag-item': subTag === currentBookTag}"
+        @click="changeCurrentBookTag(subTag)"
+      >
         {{subTag}}
       </li>
     </ul>

@@ -2,25 +2,29 @@
   <div>
     <ol class="slide-dots">
       <li v-for="page in pageCount" :key="page">
-        <a href="javascript:void(0)"
-           :style="activePageStyle(page - 1)"
-           @click="toPage(page - 1)">
-        </a>
+        <a 
+          href="javascript:void(0)"
+          :style="activePageStyle(page - 1)"
+          @click="toPage(page - 1)"
+        />
       </li>
     </ol>
 
     <div class="slide-buttons">
-      <a href="javascript:void(0)"
-         class="prev-page"
-         :style="{background: backgroundColor}"
-         @click="toPage(prevPage, 'left')"
+      <a 
+        href="javascript:void(0)"
+        class="prev-page"
+        :style="{background: backgroundColor}"
+        @click="toPage(prevPage, 'left')"
       >
         ‹
       </a>
-      <a href="javascript:void(0)"
-         class="next-page"
-         :style="{background: backgroundColor}"
-         @click="toPage(nextPage, 'right')">
+      <a 
+        href="javascript:void(0)"
+        class="next-page"
+        :style="{background: backgroundColor}"
+        @click="toPage(nextPage, 'right')"
+      >
         ›
       </a>
     </div>

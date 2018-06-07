@@ -3,35 +3,47 @@
 
     <div class="content-header">
       <h2 class="activity-tag">{{activityType.text}}</h2>
-      <a href="javascript: void(0)"
-         v-for="(type, index) in dayTypes"
-         :key="index"
-         class="day-type"
-         :class="{'active': type === currentDayType, 'not-active': type !== currentDayType}"
-         @click="changeDayType(type)">
+      <a 
+        href="javascript: void(0)"
+        v-for="(type, index) in dayTypes"
+        :key="index"
+        class="day-type"
+        :class="{'active': type === currentDayType, 'not-active': type !== currentDayType}"
+        @click="changeDayType(type)"
+      >
         {{type.text}}
       </a>
     </div>
 
     <ul class="activity-content">
-      <li v-for="activity in activities"
-          :key="activity.id"
-          class="activity-sub-item">
-        <a :href="activity.alt"
-           class="activity-image-link">
-          <img :src="activity.image"
-               class="activity-image">
+      <li 
+        v-for="activity in activities"
+        :key="activity.id"
+        class="activity-sub-item"
+      >
+        <a 
+          :href="activity.alt"
+          class="activity-image-link"
+        >
+          <img 
+            :src="activity.image"
+            class="activity-image" 
+          />
         </a>
         <div class="more-info">
-          <a :href="activity.alt"
-             class="activity-title">
+          <a 
+            :href="activity.alt"
+            class="activity-title"
+          >
             {{activity.title}}
           </a>
           <p class="date-info">
             {{getDateString(activity.begin_time, activity.end_time)}}
           </p>
-          <p class="address-info"
-             :title="activity.address">
+          <p 
+            class="address-info"
+            :title="activity.address"
+          >
             {{activity.address}}
           </p>
           <p>

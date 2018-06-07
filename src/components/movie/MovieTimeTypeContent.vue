@@ -3,57 +3,74 @@
     <div class="content-header">
       <h2>{{currentMovieTimeType.text}}</h2>
 
-      <a v-for="(type, index) in movieTimeTypes"
-         :key="index"
-         href="javascript:void(0)"
-         class="movie-type-link"
-         :class="{active: type === currentMovieTimeType, 'not-active': type !== currentMovieTimeType}"
-         @click="changeMovieTimeType(type)">
+      <a 
+        v-for="(type, index) in movieTimeTypes"
+        :key="index"
+        href="javascript:void(0)"
+        class="movie-type-link"
+        :class="{active: type === currentMovieTimeType, 'not-active': type !== currentMovieTimeType}"
+        @click="changeMovieTimeType(type)"
+      >
         {{type.text}}»
       </a>
 
-      <base-slide class="movie-slide"
-                  :pageCount="pageCount"
-                  :current-page="currentPage"
-                  background-color="#6D98D2"
-                  @change-page="changePage"
-                  @change-direction="changeDirection"/>
+      <base-slide 
+        class="movie-slide"
+        :pageCount="pageCount"
+        :current-page="currentPage"
+        background-color="#6D98D2"
+        @change-page="changePage"
+        @change-direction="changeDirection"
+      />
     </div>
 
     <transition-group tag="div" class="movie-target" :name="transitionName">
-      <ul v-for="(movies, index) in processedMovie"
-          :key="index"
-          class="movie-list"
-          v-show="index === currentPage">
-        <li v-for="movie in movies"
-            :key="movie.id"
-            class="movie-item">
+      <ul 
+        v-for="(movies, index) in processedMovie"
+        :key="index"
+        class="movie-list"
+        v-show="index === currentPage"
+      >
+        <li 
+          v-for="movie in movies"
+          :key="movie.id"
+          class="movie-item"
+        >
           <a :href="movie.alt">
-            <img :src="movie.images.large"
-                 :alt="movie.title"
-                 class="movie-image">
+            <img 
+              :src="movie.images.large"
+              :alt="movie.title"
+              class="movie-image"
+            />
           </a>
           <h3 class="movie-title-target">
-            <a :href="movie.alt"
-               class="movie-title"
-               :title="movie.title">
+            <a 
+              :href="movie.alt"
+              class="movie-title"
+              :title="movie.title"
+            >
               {{movie.title}}
             </a>
           </h3>
           <p v-if="movie.rating.average === 0">暂无评分</p>
           <p v-if="movie.rating.average !== 0">
-            <span class="score-image"
-                  :style="getStarStyle(movie.rating.average)">
-            </span>
+            <span 
+              class="score-image"
+              :style="getStarStyle(movie.rating.average)"
+            />
             <span class="movie-score">{{movie.rating.average}}</span>
           </p>
-          <p v-if="currentMovieTimeType.value === 'in_theaters'"
-             class="buy-ticket"
-             @click="buyTicket(movie)">
+          <p 
+            v-if="currentMovieTimeType.value === 'in_theaters'"
+            class="buy-ticket"
+            @click="buyTicket(movie)"
+          >
             选座购票
           </p>
-          <p v-if="currentMovieTimeType.value === 'coming_soon'"
-             class="movie-genres">
+          <p 
+            v-if="currentMovieTimeType.value === 'coming_soon'"
+            class="movie-genres"
+          >
             类型: {{movieGenresText(movie.genres)}}
           </p>
         </li>

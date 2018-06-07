@@ -1,38 +1,54 @@
 <template>
-  <div class="outer-content"
-       :style="{background: currentModuleType.backgroundColor}">
+  <div 
+    class="outer-content"
+    :style="{background: currentModuleType.backgroundColor}"
+  >
     <div class="inner-content">
-      <h2 class="search-logo"
-          :class="currentModuleType.logo">
+      <h2 
+        class="search-logo"
+        :class="currentModuleType.logo"
+      >
         {{currentModuleType.text}}
       </h2>
 
       <div class="search-target">
         <form class="search-form">
-          <input type="text"
-                 class="search-input"
-                 :placeholder="currentModuleType.placeholder"
-                 v-model="keyword"
-                 @blur="onInputBlur()"
-                 @focus="onInputFocus()">
-          <input type="submit"
-                 value="搜索"
-                 class="search-submit"
-                 :class="currentModuleType.searchIcon">
+          <input 
+            type="text"
+            class="search-input"
+            :placeholder="currentModuleType.placeholder"
+            v-model="keyword"
+            @blur="onInputBlur()"
+            @focus="onInputFocus()"
+          />
+          <input 
+            type="submit"
+            value="搜索"
+            class="search-submit"
+            :class="currentModuleType.searchIcon" 
+          />
         </form>
 
-        <ul class="search-suggest"
-            v-show="showSearchSuggest"
-            @mouseenter="onListFocus()"
-            @mouseleave="onListBlur()">
-          <li v-for="item in searchData"
-              :key="item.id"
-              class="search-item">
-            <a class="search-item-link"
-               :href="item.alt">
-              <img class="search-item-image"
-                   :src="item.image || item.images.small"
-                   referrerpolicy="no-referrer">
+        <ul 
+          class="search-suggest"
+          v-show="showSearchSuggest"
+          @mouseenter="onListFocus()"
+          @mouseleave="onListBlur()"
+        >
+          <li 
+            v-for="item in searchData"
+            :key="item.id"
+            class="search-item"
+          >
+            <a 
+              class="search-item-link"
+              :href="item.alt"
+            >
+              <img 
+                class="search-item-image"
+                :src="item.image || item.images.small"
+                referrerpolicy="no-referrer"
+              />
               <h3 class="search-item-title">
                 {{item.title}}
               </h3>
@@ -42,12 +58,16 @@
               <span v-if="item.year">
                 {{item.year}}
               </span>
-              <p v-if="item.author"
-                 class="search-item-author">
+              <p 
+                v-if="item.author"
+                class="search-item-author"
+              >
                 {{item.author | processedAuthor}}
               </p>
-              <p v-if="item.genres"
-                 class="search-item-genres">
+              <p 
+                v-if="item.genres"
+                class="search-item-genres"
+              >
                 {{item.genres.join()}}
               </p>
             </a>

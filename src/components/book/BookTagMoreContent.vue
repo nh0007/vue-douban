@@ -3,13 +3,17 @@
     <h2 class="content-header">豆瓣读书标签:{{currentBookTag}}</h2>
 
     <ul>
-      <li v-for="book in currentTagBooks"
-          :key="book.id"
-          class="book-item">
+      <li 
+        v-for="book in currentTagBooks"
+        :key="book.id"
+        class="book-item"
+      >
         <a :href="book.alt" :title="book.title">
-          <img :src="book.images.large"
-               :alt="book.title"
-               class="book-image">
+          <img 
+            :src="book.images.large"
+            :alt="book.title"
+            class="book-image"
+          />
         </a>
         <div class="book-info">
           <h3 class="link-title">
@@ -19,20 +23,25 @@
             {{book.author.join()}} / {{book.translator.join()}} / {{book.publisher}} / {{book.pubdate}} / {{book.price}}
           </p>
           <div>
-            <span class="score-image"
-                  :style="getStarStyle(book.rating.average)">
-            </span>
+            <span 
+              class="score-image"
+              :style="getStarStyle(book.rating.average)" 
+            />
             <span class="average-score">{{book.rating.average}}</span>
             <span class="raters-number">({{book.rating.numRaters}}人评价)</span>
           </div>
           <p class="book-summary">{{book.summary | processedSummary(80)}}</p>
           <div>
-            <a :href="book.alt"
-               class="buy-books">
+            <a 
+              :href="book.alt"
+              class="buy-books"
+            >
               去豆瓣购买
             </a>
-            <a :href="book.ebook_url"
-               class="e-book">
+            <a 
+              :href="book.ebook_url"
+              class="e-book"
+            >
               去看电子版
             </a>
           </div>

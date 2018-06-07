@@ -3,12 +3,16 @@
 
     <div class="music-tags">
       <ul>
-        <li v-for="(tag, index) in musicTags"
-            :key="index"
-            class="music-tag-item">
-          <a href="javascript: void(0)"
-             :class="{active: tag === currentMusicTag, 'not-active': tag !== currentMusicTag}"
-             @click="changeMusicTag(tag)">
+        <li 
+          v-for="(tag, index) in musicTags"
+          :key="index"
+          class="music-tag-item"
+        >
+          <a 
+            href="javascript: void(0)"
+            :class="{active: tag === currentMusicTag, 'not-active': tag !== currentMusicTag}"
+            @click="changeMusicTag(tag)"
+          >
             {{tag}}
           </a>
         </li>
@@ -17,19 +21,27 @@
 
     <div class="music-list">
       <ul>
-        <li v-for="music in currentTagMusics"
-            :key="music.id"
-            class="music-item">
+        <li 
+          v-for="music in currentTagMusics"
+          :key="music.id"
+          class="music-item"
+        >
           <div class="cover">
             <a href="javascript: void(0)">
-              <img :src="music.image"
-                   class="music-image"
-                   referrerpolicy="no-referrer">
+              <img 
+                :src="music.image"
+                class="music-image"
+                referrerpolicy="no-referrer"
+              />
             </a>
-            <a class="image-hover"
-               :href="music.alt">
-              <p v-for="(song, index) in getSongArray(music.attrs.tracks[0])"
-                 :key="index">
+            <a 
+              class="image-hover"
+              :href="music.alt"
+            >
+              <p 
+                v-for="(song, index) in getSongArray(music.attrs.tracks[0])"
+                :key="index"
+              >
                 {{song}}
               </p>
             </a>
@@ -39,9 +51,13 @@
           </div>
           <p class="music-singer">{{music.attrs.singer.join( )}}</p>
           <p class="music-title">
-            <a :href="music.alt"
-               class="music-title-link"
-               :title="music.title">{{music.title}}</a>
+            <a 
+              :href="music.alt"
+              class="music-title-link"
+              :title="music.title"
+            >
+              {{music.title}}
+            </a>
           </p>
         </li>
       </ul>
